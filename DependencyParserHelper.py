@@ -55,11 +55,13 @@ def stringToDependencyTreeWeakRef(string):
             nodeList[dependency_id].addChild(nodeList[id])
         else:
             if rootId != -1:
-                sys.exit("root appeared more than once!!")
+                sys.stderr.write('Root appeared more than once!! Skipping... ')
+                return None
             rootId = id
             nodeList[id].parent = None
     if rootId == -1:
-        sys.exit("root didn't appeare!")
+        sys.stderr.write("Root did't appear!! Skippping...") 
+        return None
     addSpans(nodeList[rootId])
     nodeList[rootId].nodeList = nodeList
     return nodeList[rootId]
