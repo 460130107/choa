@@ -180,7 +180,7 @@ class Model(object):
       self.featureTemplates.append(localFeatures.ff_nonfinalPeriodLinkedToComma)
       self.featureTemplates.append(localFeatures.ff_nonPeriodLinkedToPeriod)
       self.featureTemplates.append(localFeatures.ff_nonfinalPeriodLinkedToFinalPeriod)
-      self.featureTemplates.append(localFeatures.ff_tgtTag_srcTag)
+      # self.featureTemplates.append(localFeatures.ff_tgtTag_srcTag)
       self.featureTemplates.append(localFeatures.ff_thirdParty)
   
     ##################################################
@@ -195,7 +195,7 @@ class Model(object):
       self.featureTemplates_nonlocal.append(nonlocalFeatures.ff_nonlocal_isPuncAndHasMoreThanOneLink)
       self.featureTemplates_nonlocal.append(nonlocalFeatures.ff_nonlocal_sameWordLinks)
       self.featureTemplates_nonlocal.append(nonlocalFeatures.ff_nonlocal_treeDistance1)
-      self.featureTemplates_nonlocal.append(nonlocalFeatures.ff_nonlocal_tgtTag_srcTag)
+      # self.featureTemplates_nonlocal.append(nonlocalFeatures.ff_nonlocal_tgtTag_srcTag)
       # self.featureTemplates_nonlocal.append(nonlocalFeatures.ff_nonlocal_crossb)
   
     def align(self):
