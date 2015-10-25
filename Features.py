@@ -794,7 +794,7 @@ class NonlocalFeatures:
                         treeDistValues[(eIndex1,eIndex2)] = val
                         dist += val
   
-            dist /= tgtSpanDist
+        dist /= tgtSpanDist
         return {name: dist}
   
     def ff_nonlocal_treeDistance2(self, info, treeNode, edge, links, srcSpan, tgtSpan):
