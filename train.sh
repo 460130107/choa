@@ -22,7 +22,7 @@ nice -15 mpiexec -n $NUMCPUS $PYTHON ./choa.py \
   --fdev $DATA/dev.f \
   --edev $DATA/dev.e \
   --ftreesdev $DATA/forest/1best/dev.f-parse \
-  --etreesdev $DATA/forest/1best/dev.f-parse \
+  --etreesdev $DATA/forest/1best/dev.e-parse \
   --golddev $DATA/dev.a.s \
   --evcb $DATA/e.vcb \
   --fvcb $DATA/f.vcb \
