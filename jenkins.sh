@@ -13,7 +13,8 @@ export C_INCLUDE_PATH=/home/hitoshi/developer/boost_1_59_0:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=/home/hitoshi/developer/boost_1_59_0:$CPLUS_INCLUDE_PATH
 export LD_LIBRARY_PATH=/home/hitoshi/developer/boost_1_59_0/stage/lib:$LD_LIBRARY_PATH
 
-rm -rf weights-* weights.*
+rm -rf weights-* 
+rm -rf weights.*
 rm -rf k*
 rm -rf *output*
 rm -rf data
