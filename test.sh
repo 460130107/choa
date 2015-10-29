@@ -17,17 +17,18 @@ LINK=$1
 MAXEPOCH=$2
 PARTIAL=$3
 DATA=./data
-LANGPAIR=ja_en
+LANGPAIR=ja_zh
 ERR_FILE_NAME=k${K}.$LANGPAIR.$MAXEPOCH.$PARTIAL.$LINK
-H=`grep F-score-dev $ERR_FILE_NAME.err | awk '{print $2}' | cat -n | sort -nr -k 2 | head -1 | cut -f 1 | tr -d '[[:space:]]'`
+# H=`grep F-score-dev $ERR_FILE_NAME.err | awk '{print $2}' | cat -n | sort -nr -k 2 | head -1 | cut -f 1 | tr -d '[[:space:]]'`
+H=38
 WEIGHTS=k${K}.$LANGPAIR.$MAXEPOCH.$PARTIAL.$LINK.weights-$H
 NAME=$WEIGHTS.test-output.a
 
 nice -19 mpiexec -n $NUMCPUS $PYTHON ./choa.py \
   --f $DATA/test.f \
   --e $DATA/test.e \
-  --ftrees $DATA/forest/1best/test.f-parse \
-  --etrees $DATA/forest/1best/test.e-parse \
+  --ftrees /windroot/otsuki/data/ASPEC-JC/test.f-parse \
+  --etrees /windroot/otsuki/data/ASPEC-JC/test.e-parse \
   --evcb $DATA/test.e.vcb \
   --fvcb $DATA/test.f.vcb \
   --pef $DATA/GIZA++.m4.pef  \

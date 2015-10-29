@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
 CPU=`nproc`
-_CORES=`echo "$CPU * 0.5" | bc`
+_CORES=`echo "$CPU * 0.8" | bc`
 LINK=2
-ITER=2
-PARTIAL=5
+ITER=100
+PARTIAL=-1
 
 export CORES=${_CORES%.*}
 export PYTHONPATH=/usr/local/lib:$HOME/developer/pyglog:$HOME/developer/forest_aligner/pyglog:PYTHONPATH
@@ -16,6 +16,7 @@ export LD_LIBRARY_PATH=/home/hitoshi/developer/boost_1_59_0/stage/lib:$LD_LIBRAR
 rm -rf weights-* weights.*
 rm -rf k*
 rm -rf *output*
+rm -rf data
 
 [ ! -d data ] && ln -s $ASPEC_JE data
 ./train.sh $LINK $ITER $PARTIAL
