@@ -18,6 +18,6 @@ rm -rf k*
 rm -rf *output*
 rm -rf data
 
-[ ! -d data ] && ln -s $ASPEC_JE data
+[ ! -d data ] && ln -s $ASPEC_JC data
 ./train.sh $LINK $ITER $PARTIAL
 ./test.sh $LINK $ITER $PARTIAL
