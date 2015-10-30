@@ -2,9 +2,16 @@
 
 CPU=`nproc`
 _CORES=`echo "$CPU * 0.8" | bc`
+
+################### CUSTOMIZABLE #####################
 LINK=2
 ITER=100
 PARTIAL=-1
+LANG="ja_zh"
+export DATA=/windroot/otsuki/data/ASPEC-JC # Absolute path to the base directory which has data
+export TARGET_TREE_DATA=$DATA/forest/1best
+export SOURCE_TREE_DATA=$DATA/forest/1best
+######################################################
 
 export CORES=${_CORES%.*}
 export PYTHONPATH=/usr/local/lib:$HOME/developer/pyglog:$HOME/developer/forest_aligner/pyglog:PYTHONPATH
@@ -17,8 +24,6 @@ rm -rf weights-*
 rm -rf weights.*
 rm -rf k*
 rm -rf *output*
-rm -rf data
 
-[ ! -d data ] && ln -s $ASPEC_JC data
-./train.sh $LINK $ITER $PARTIAL
-./test.sh $LINK $ITER $PARTIAL
+./train.sh $LINK $ITER $PARTIAL $LANG
+./test.sh $LINK $ITER $PARTIAL $LANG

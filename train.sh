@@ -9,20 +9,19 @@ K=128
 LINK=$1
 MAXEPOCH=$2
 PARTIAL=$3
-DATA=./data
-LANGPAIR=ja_zh
+LANGPAIR=$4
 NAME=k${K}.$LANGPAIR.$MAXEPOCH.$PARTIAL.$LINK
 
 nice -15 mpiexec -n $NUMCPUS $PYTHON ./choa.py \
   --f $DATA/train.f \
   --e $DATA/train.e \
   --gold $DATA/train.a.s \
-  --ftrees /windroot/otsuki/data/ASPEC-JC/train.f-parse \
-  --etrees /windroot/otsuki/data/ASPEC-JC/train.e-parse \
+  --ftrees $SOURCE_TREE_DATA/train.f.forest \
+  --etrees $TARGET_TREE_DATA/train.e.forest \
   --fdev $DATA/dev.f \
   --edev $DATA/dev.e \
-  --ftreesdev /windroot/otsuki/data/ASPEC-JC/dev.f-parse \
-  --etreesdev /windroot/otsuki/data/ASPEC-JC/dev.e-parse \
+  --ftreesdev $SOURCE_TREE_DATA/dev.f.forest \
+  --etreesdev $TARGET_TREE_DATA/dev.e.forest \
   --golddev $DATA/dev.a.s \
   --evcb $DATA/e.vcb \
   --fvcb $DATA/f.vcb \
