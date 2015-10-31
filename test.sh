@@ -15,7 +15,7 @@ H=`grep F-score-dev $ERR_FILE_NAME.err | awk '{print $2}' | cat -n | sort -nr -k
 WEIGHTS=k${K}.$LANGPAIR.$MAXEPOCH.$PARTIAL.$LINK.weights-$H
 NAME=$WEIGHTS.test-output.a
 
-nice -19 mpiexec -n $NUMCPUS $PYTHON ./aligner.py \
+nice -19 mpiexec -n $NUMCPUS $PYTHON ./choa.py \
   --f $DATA/test.f \
   --e $DATA/test.e \
   --ftrees $SOURCE_TREE_DATA/test.f.forest \
