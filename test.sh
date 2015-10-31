@@ -18,8 +18,8 @@ NAME=$WEIGHTS.test-output.a
 nice -19 mpiexec -n $NUMCPUS $PYTHON ./choa.py \
   --f $DATA/test.f \
   --e $DATA/test.e \
-  --ftrees $SOURCE_TREE_DATA/test.f.forest \
-  --etrees $TARGET_TREE_DATA/test.e.forest \
+  --ftrees $SOURCE_TREE_DATA/test.f.dep \
+  --etrees $TARGET_TREE_DATA/test.e.dep \
   --evcb $DATA/test.e.vcb \
   --fvcb $DATA/test.f.vcb \
   --pef $DATA/GIZA++.m4.pef  \

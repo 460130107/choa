@@ -16,12 +16,12 @@ nice -15 mpiexec -n $NUMCPUS $PYTHON ./choa.py \
   --f $DATA/train.f \
   --e $DATA/train.e \
   --gold $DATA/train.a.s \
-  --ftrees $SOURCE_TREE_DATA/train.f.forest \
-  --etrees $TARGET_TREE_DATA/train.e.forest \
+  --ftrees $SOURCE_TREE_DATA/train.f.dep \
+  --etrees $TARGET_TREE_DATA/train.e.dep \
   --fdev $DATA/dev.f \
   --edev $DATA/dev.e \
-  --ftreesdev $SOURCE_TREE_DATA/dev.f.forest \
-  --etreesdev $TARGET_TREE_DATA/dev.e.forest \
+  --ftreesdev $SOURCE_TREE_DATA/dev.f.dep \
+  --etreesdev $TARGET_TREE_DATA/dev.e.dep \
   --golddev $DATA/dev.a.s \
   --evcb $DATA/e.vcb \
   --fvcb $DATA/f.vcb \
