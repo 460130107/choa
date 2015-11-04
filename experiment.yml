@@ -1,0 +1,33 @@
+---
+
+- model: choa
+- language: ja-en
+- links: 2
+- kbest: 128
+- partial: -1
+- iteration: 100  
+- features:
+  - local:
+    - ff_identity
+    - ff_jumpDistance
+    - ff_finalPeriodAlignedToNonPeriod
+    - ff_lexprob_zero
+    - ff_probEgivenF
+    - ff_probFgivenE
+    - ff_distToDiag
+    - ff_isLinkedToNullWord
+    - ff_isPuncAndHasMoreThanOneLink
+    - ff_quote1to1
+    - ff_unalignedNonfinalPeriod
+    - ff_nonfinalPeriodLinkedToComma
+    - ff_nonPeriodLinkedToPeriod
+    - ff_nonfinalPeriodLinkedToFinalPeriod
+    - ff_tgtTag_srcTag
+    - ff_thirdParty
+
+  - non-local:
+    - ff_nonlocal_isPuncAndHasMoreThanOneLink
+    - ff_nonlocal_sameWordLinks
+    - ff_nonlocal_treeDistance1
+    - ff_nonlocal_tgtTag_srcTag
+
